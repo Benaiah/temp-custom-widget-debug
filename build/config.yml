@@ -1,0 +1,24 @@
+backend:
+  name: test-repo
+
+media_folder: "media"
+
+collections: # A list of collections the CMS should be able to edit
+  - name: pages
+    label: Pages
+    folder: site/content/pages
+    create: true
+    fields:
+      - {label: Title, name: title, widget: string, tagname: ""}
+      - label: Body
+        name: body
+        widget: list
+        fields:
+          - label: Block
+            name: block
+            widget: block
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Date, name: date, widget: datetime, format: "HH:mm ddd D MMM YYYY"}
+              - {label: Summary, name: description, widget: text}
+              - {label: Image, name: image, widget: image, required: false}
